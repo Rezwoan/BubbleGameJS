@@ -111,11 +111,12 @@ function gameOver() {
     if (highScore === 0) { // If the high score is 0, set it to the current score
         highScore = score;
     }    
+    setNewHighScore();
+    updateHighScore();
     const over = `<div id="over"><h1>Game Over<br>SCORE: ${score}<br>High Score: ${highScore}</h1></div>`;
     document.querySelector('#pbtm').outerHTML = over;
     document.querySelector('#hit').innerHTML = 'X';
-    setNewHighScore();
-    updateHighScore();
+    
 }
 
 updateHighScore(); // Initialize the high score display
