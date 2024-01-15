@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        document.onkeydown = function (e) {
+            if (e.ctrlKey && (e.keyCode === 67 || e.keyCode === 85)) { // Ctrl+C, Ctrl+U
+                return false;
+            }
+        };
+    </script>
+    <title>Document</title>
+</head>
+<body>
+<div id="main">
+    <div id="panel">
+        <div id="ptop">
+            <div class="elem">
+                <h2>Hit</h2>
+                <div id="hit" class="box">0</div>
+            </div>
+            <div class="elem">
+                <h2>Timer</h2>
+                <div id="timer" class="box">30</div>
+            </div>
+            <div class="elem">
+                <h2>Score</h2>
+                <div id="score" class="box">0</div>
+            </div>
+            <div class="elem">
+                <h2>High Score</h2>
+                <div id="highscore" class="box">0</div>
+            </div>
+        </div>
+        <div id="pbtm">
+        </div>
+    </div>
+</div>
+<script src="./script.js"></script>
+</body>
+</html>
