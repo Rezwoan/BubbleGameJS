@@ -3,9 +3,6 @@ let hitNum = 0; // Variable to store the randomly generated number to hit
 let time = 30; // Variable to store the time remaining in seconds
 
 let highScore = localStorage.getItem('highScore') || 0; // Retrieve the high score from local storage or set it to 0 if it doesn't exist
-if (highScore === 0) { // If the high score is 0, set it to the current score
-    highScore = score;
-}
 
 /**
  * Function to increase the player's score by 10 and update the score display
@@ -111,6 +108,9 @@ function setNewHighScore() {
  * Function to end the game and display the game over screen
  */
 function gameOver() {
+    if (highScore === 0) { // If the high score is 0, set it to the current score
+        highScore = score;
+    }    
     const over = `<div id="over"><h1>Game Over<br>SCORE: ${score}<br>High Score: ${highScore}</h1></div>`;
     document.querySelector('#pbtm').outerHTML = over;
     document.querySelector('#hit').innerHTML = 'X';
